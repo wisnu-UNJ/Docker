@@ -1,0 +1,31 @@
+services:
+
+  wordpress:
+    container_name: wordpress
+    image:  wordpress
+    environment:
+      - WORDPRESS_DB_HOST=mariadb:3306
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=Pnd77net!
+      - WORDPRESS_DB_NAME=wp_db
+    depends_on: // mendahulukan mariadb
+      - mariadb 
+    ports:
+      - 8080:80
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=Pnd77net!
+      - MARIADB_USER=wordpress
+      - MARIADB_DATABASE=wp_db
+      - MARIADB_PASSWORD=Pnd77net!
+
+
+
+networks:
+  network-wisnu:
+   driver: bridge
+
+volumes:
+  mysql-driver:
