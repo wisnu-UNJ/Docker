@@ -6,7 +6,7 @@ services:
     environment:
       - WORDPRESS_DB_HOST=mariadb:3306
       - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DB_PASSWORD=Pnd77net!
+      - WORDPRESS_DB_PASSWORD=learning
       - WORDPRESS_DB_NAME=wp_db
     depends_on: // mendahulukan mariadb
       - mariadb 
@@ -16,10 +16,10 @@ services:
     container_name: mariadb
     image: mariadb
     environment:
-      - MARIADB_ROOT_PASSWORD=Pnd77net!
+      - MARIADB_ROOT_PASSWORD=learning
       - MARIADB_USER=wordpress
       - MARIADB_DATABASE=wp_db
-      - MARIADB_PASSWORD=Pnd77net!
+      - MARIADB_PASSWORD=learning
 
 
 
